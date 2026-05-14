@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | CareerCraft</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+          <link rel="icon" href="images\logo.jpeg">
+
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#DFF976',
+                        neondark: '#B4D628',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .transition-theme {
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        /* Technical Grid Pattern */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .dark .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Radar Sweep Animation */
+        .radar-sweep {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150vw;
+            height: 150vw;
+            margin-top: -75vw;
+            margin-left: -75vw;
+            background: conic-gradient(from 0deg, transparent 70%, rgba(223, 249, 118, 0.1) 80%, rgba(223, 249, 118, 0.4) 100%);
+            border-radius: 50%;
+            transform-origin: center;
+            animation: sweep 4s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes sweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans transition-theme min-h-[100dvh] flex flex-col items-center justify-center overflow-x-hidden overflow-y-auto relative py-20 px-4">
+
+    <div class="absolute inset-0 bg-grid-pattern z-0 pointer-events-none"></div>
+    <div class="radar-sweep hidden dark:block"></div>
+
+    <div class="absolute top-1/4 left-0 md:left-1/4 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-neon/20 rounded-full blur-[100px] md:blur-[120px] pointer-events-none animate-pulse-slow z-0"></div>
+    
+    <div class="absolute bottom-1/4 right-0 md:right-1/4 w-[250px] md:w-[300px] h-[250px] md:h-[300px] bg-blue-500/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none animate-pulse-slow animation-delay-2000 z-0"></div>
+
+  
+
+    <div class="relative z-10 w-full max-w-4xl mx-auto text-center flex flex-col items-center">
+
+        
+
+        <div class="relative animate-float mb-8 w-full max-w-[280px] sm:max-w-sm md:max-w-lg mx-auto flex justify-center">
+            
+            <h1 class="text-[6.5rem] sm:text-[8rem] md:text-[12rem] lg:text-[14rem] font-heading font-black leading-none tracking-tighter text-neondark bg-clip-text bg-gradient-to-b from-slate-300 to-slate-100 dark:from-slate-800 dark:to-slate-900 drop-shadow-sm select-none relative z-10">
+                404
+            </h1>
+            
+            <h1 class="text-[6.5rem] sm:text-[8rem] md:text-[12rem] lg:text-[14rem] font-heading font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-slate-400 to-transparent dark:from-slate-700 dark:to-transparent absolute inset-0 mix-blend-overlay pointer-events-none select-none z-20 flex justify-center">
+                404
+            </h1>
+
+            <div class="absolute top-[10%] md:top-[20%] -left-2 sm:-left-6 md:-left-12 w-12 h-12 md:w-16 md:h-16 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl md:rounded-2xl shadow-xl flex items-center justify-center text-red-500 text-xl md:text-2xl transform -rotate-12 z-30">
+                <i class="fas fa-file-circle-xmark"></i>
+            </div>
+            
+            <div class="absolute bottom-[10%] md:bottom-[20%] -right-2 sm:-right-6 md:-right-12 w-12 h-12 md:w-16 md:h-16 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl md:rounded-2xl shadow-xl flex items-center justify-center text-neon text-xl md:text-2xl transform rotate-12 z-30">
+                <i class="fas fa-compass"></i>
+            </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto mb-10 px-2">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white mb-4 leading-tight">
+                This page didn't pass the ATS scan.
+            </h2>
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-medium">
+                Looks like your career trajectory took an unexpected turn. The page you are looking for has been moved, deleted, or never existed in the first place.
+            </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto z-30 px-4">
+            <a href="index.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black font-bold text-sm hover:bg-neon dark:hover:bg-neon hover:text-black dark:hover:text-black transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group">
+                <i class="fas fa-home group-hover:-translate-y-0.5 transition-transform"></i> Return to Homepage
+            </a>
+            <a href="services.html" class="w-full sm:w-auto px-8 py-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm text-slate-900 dark:text-white font-bold text-sm hover:border-neon dark:hover:border-neon transition-colors duration-300 flex items-center justify-center gap-2">
+                <i class="fas fa-layer-group"></i> View Coaching Services
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const htmlElement = document.documentElement;
+        const themeBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        function applyTheme() {
+            let theme = localStorage.getItem('careercraft-dark') === 'true';
+            if (theme) {
+                htmlElement.classList.add('dark');
+                themeIcon.className = 'fas fa-sun text-neon';
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('careercraft-dark', isDark);
+            applyTheme();
+        }
+
+        themeBtn.addEventListener('click', toggleTheme);
+
+        // RTL Toggle Logic
+        const rtlBtn = document.getElementById('rtlToggle');
+
+        function applyRTL() {
+            let isRTL = localStorage.getItem('careercraft-rtl') === 'true';
+            if (isRTL) {
+                htmlElement.setAttribute("dir", "rtl");
+            } else {
+                htmlElement.setAttribute("dir", "ltr");
+            }
+        }
+
+        function toggleRTL() {
+            const currentDir = htmlElement.getAttribute("dir");
+            const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+            htmlElement.setAttribute("dir", newDir);
+            localStorage.setItem("careercraft-rtl", newDir === "rtl");
+        }
+
+        rtlBtn.addEventListener('click', toggleRTL);
+
+        // Initialize Theme & RTL securely on load without forcing overwrites
+        applyTheme();
+        applyRTL();
+    </script>
+</body>
+
+</html>

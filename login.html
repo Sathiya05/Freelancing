@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login | CareerCraft Coaching</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      <link rel="icon" href="images\logo.jpeg">
+
+    <script src="tailwind.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#DFF976',
+                        neondark: '#B4D628',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .transition-theme {
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        /* Custom Checkbox */
+        .careercraft-checkbox:checked {
+            background-color: #DFF976;
+            border-color: #DFF976;
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+
+<body
+    class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans transition-theme min-h-[100dvh] overflow-x-hidden">
+
+    <div class="absolute top-6 end-6 z-50 flex items-center gap-3">
+        <button id="rtlToggle"
+            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:border-neon hover:text-neon transition-all shadow-sm"
+            title="Toggle RTL">
+            <span class="text-[10px] font-black uppercase">RTL</span>
+        </button>
+        <button id="themeToggle"
+            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:border-neon hover:text-neon transition-all shadow-sm"
+            title="Toggle Theme">
+            <i id="themeIcon" class="fas fa-moon text-sm"></i>
+        </button>
+    </div>
+
+    <div class="flex min-h-[100dvh] w-full">
+
+        <div
+            class="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-12 md:px-20 lg:px-24 xl:px-32 relative z-10 overflow-y-auto">
+
+            <div class="w-full max-w-md mx-auto pt-6 pb-10">
+
+                <a href="index.html" class="relative z-[60] flex items-center gap-3 group shrink-0">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20">
+                        <i class="fa-solid fa-briefcase text-black text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
+                            Career<span class="text-[#B4D628]">Craft</span>
+                        </span>
+                        <span
+                            class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
+                            Premium Coaching
+                        </span>
+                    </div>
+                </a>
+
+                <div class="mt-8 mb-6 border-b border-slate-100 dark:border-slate-800 pb-6">
+                    <h1 class="text-2xl font-heading font-black text-slate-900 dark:text-white mb-2">Welcome back.</h1>
+                    <p class="text-sm text-slate-500 font-medium">Log in to access your drafts, coaching recordings, and
+                        application tracker.</p>
+                </div>
+
+                <form id="loginForm" class="space-y-4">
+
+                    <div>
+                        <label for="email" class="block text-xs font-bold text-slate-900 dark:text-white mb-2">Email
+                            Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 ps-4 flex items-center pointer-events-none">
+                                <i class="fas fa-envelope text-slate-400 text-sm"></i>
+                            </div>
+                            <input type="email" id="email" required placeholder="name@example.com"
+                                class="w-full ps-11 pe-4 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-neon focus:ring-1 focus:ring-neon outline-none transition-all text-slate-900 dark:text-white placeholder-slate-400 text-sm font-medium">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="mb-2">
+                            <label for="password"
+                                class="block text-xs font-bold text-slate-900 dark:text-white">Password</label>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 ps-4 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-slate-400 text-sm"></i>
+                            </div>
+                            <input type="password" id="password" required placeholder="••••••••"
+                                class="w-full ps-11 pe-12 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-neon focus:ring-1 focus:ring-neon outline-none transition-all text-slate-900 dark:text-white placeholder-slate-400 text-sm font-medium">
+                            <button type="button" onclick="togglePassword()"
+                                class="absolute inset-y-0 end-0 pe-4 flex items-center text-slate-400 hover:text-neon transition-colors">
+                                <i id="eyeIcon" class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-2 mb-2 min-h-[2.5rem]">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox"
+                                class="careercraft-checkbox w-4 h-4 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-neon focus:ring-neon focus:ring-offset-0 transition-all appearance-none cursor-pointer">
+                            <span
+                                class="text-xs font-bold text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">Remember
+                                Me
+                            </span>
+                        </label>
+                        <a href="#" class="text-xs font-bold text-slate-500 hover:text-neon transition-colors">Forgot
+                            Password?</a>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-xl font-bold text-sm hover:bg-neon dark:hover:bg-neon hover:text-black dark:hover:text-black shadow-[0_10px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_20px_rgba(223,249,118,0.1)] transition-all flex items-center justify-center gap-2 group mt-4">
+                        Log In <i
+                            class="fas fa-arrow-right rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"></i>
+                    </button>
+                </form>
+
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-200 dark:border-slate-800"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span
+                            class="px-4 bg-white dark:bg-slate-950 text-slate-400 font-bold uppercase tracking-widest text-[9px]">Or
+                            continue with</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-neon transition-all text-xs font-bold text-slate-900 dark:text-white group">
+                        <i class="fab fa-google text-red-500 text-base group-hover:scale-110 transition-transform"></i>
+                        Google
+                    </button>
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-neon transition-all text-xs font-bold text-slate-900 dark:text-white group">
+                        <i
+                            class="fab fa-linkedin text-[#0077b5] text-base group-hover:scale-110 transition-transform"></i>
+                        LinkedIn
+                    </button>
+                </div>
+
+                <p class="mt-8 text-center text-xs font-medium text-slate-500">
+                    Not a client yet?
+                    <a href="signup.html"
+                        class="font-bold text-slate-900 dark:text-white hover:text-neon dark:hover:text-neon underline decoration-2 underline-offset-4 transition-colors">Sign
+                        Up
+                    </a>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="hidden lg:flex w-1/2 relative bg-slate-900 items-center justify-center p-12 overflow-hidden">
+
+            <img src="images\img12.avif" alt="Office Background"
+                class="absolute inset-0 w-full h-full object-cover opacity-40 ">
+
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/60 to-transparent"></div>
+
+            <div
+                class="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-neon/20 rounded-full blur-[120px] pointer-events-none z-0">
+            </div>
+
+            <div
+                class="relative z-10 max-w-md w-full bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+                <div class="text-neon text-4xl mb-4 opacity-80"><i class="fa-solid fa-quote-left"></i></div>
+
+                <h3 class="text-2xl font-heading font-bold text-white leading-snug mb-6">
+                    "I walked into my interview with absolute confidence. The coaching and the new resume got me a $40k
+                    bump in base salary."
+                </h3>
+
+                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                    <img src="images\g1.avif" alt="Client"
+                        class="w-12 h-12 rounded-full border-2 border-neon object-cover">
+                    <div>
+                        <p class="font-bold text-white text-sm">Elena R.</p>
+                        <p class="text-[10px] text-slate-300 font-bold uppercase tracking-widest mt-0.5">VP of Marketing
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="absolute bottom-10 left-10 flex items-center gap-4 text-white/50 text-sm font-bold tracking-widest uppercase">
+                <i class="fa-solid fa-circle-check text-neon"></i> Secure Portal
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // 1. Password Visibility Toggle
+        function togglePassword() {
+            const passInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+                eyeIcon.classList.add('text-neon');
+            } else {
+                passInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.remove('text-neon');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        // 2. Dark Mode Toggle
+        const htmlElement = document.documentElement;
+        const themeBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        function applyTheme() {
+            let theme = localStorage.getItem('careercraft-dark') === 'true';
+            if (theme) {
+                htmlElement.classList.add('dark');
+                themeIcon.className = 'fas fa-sun text-neon';
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('careercraft-dark', isDark);
+            applyTheme();
+        }
+
+        themeBtn.addEventListener('click', toggleTheme);
+
+        // 3. RTL Toggle Logic
+        const rtlBtn = document.getElementById('rtlToggle');
+
+        function applyRTL() {
+            let isRTL = localStorage.getItem('careercraft-rtl') === 'true';
+            if (isRTL) {
+                htmlElement.setAttribute("dir", "rtl");
+            } else {
+                htmlElement.setAttribute("dir", "ltr");
+            }
+        }
+
+        function toggleRTL() {
+            const currentDir = htmlElement.getAttribute("dir");
+            const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+            htmlElement.setAttribute("dir", newDir);
+            localStorage.setItem("careercraft-rtl", newDir === "rtl");
+        }
+
+        rtlBtn.addEventListener('click', toggleRTL);
+
+        // Initialize Theme & RTL on load
+        applyTheme();
+        applyRTL();
+
+        // 4. Mock Form Submit (Redirects to User Dashboard)
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+
+            // Show loading state
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Authenticating...';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+
+            // Simulate network request and redirect to the User portal
+            setTimeout(() => {
+                window.location.href = 'user.html';
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal | CareerCraft Coaching</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="tailwind.js"></script>
+          <link rel="icon" href="images\logo.jpeg">
+
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#DFF976',
+                        neondark: '#B4D628',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styles and transitions */
+        body { -webkit-font-smoothing: antialiased; }
+        
+        * { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        /* RTL support */
+        html[dir="rtl"] .ml-auto { margin-left: 0 !important; margin-right: auto !important; }
+        html[dir="rtl"] .ml-3 { margin-left: 0 !important; margin-right: 0.75rem !important; }
+        html[dir="rtl"] .mr-2 { margin-right: 0 !important; margin-left: 0.5rem !important; }
+        html[dir="rtl"] .pl-4 { padding-left: 0 !important; padding-right: 1rem !important; }
+        html[dir="rtl"] .border-r { border-right: none !important; border-left: 1px solid rgba(148, 163, 184, 0.1) !important; }
+
+        #sidebar { transition: transform 0.3s ease-in-out; }
+
+        /* Page Content Toggle Classes */
+        .page-content { display: none; }
+        .page-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans overflow-x-hidden">
+
+    <div id="overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity duration-300"></div>
+
+    <div class="flex h-screen overflow-hidden relative">
+
+        <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 flex-shrink-0 bg-white dark:bg-slate-900 shadow-2xl lg:shadow-none flex flex-col h-full border-r border-slate-200 dark:border-slate-800 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+
+            <div class="px-6 pt-8 pb-6 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+                <a href="index.html" class="relative z-[60] flex items-center gap-3 group shrink-0">
+        <div class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20">
+          <i class="fa-solid fa-briefcase text-black text-lg"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
+            Career<span class="text-[#B4D628]">Craft</span>
+          </span>
+          <span class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
+            Premium Coaching
+          </span>
+        </div>
+      </a>
+                <button id="closeSidebarBtn" class="lg:hidden w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-neon">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="lg:hidden px-6 py-4 flex items-center gap-3 border-b border-slate-100 dark:border-slate-800">
+                <button id="mobileRtlToggle" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-neon">
+                    <i class="fas fa-language"></i>
+                </button>
+                <button id="mobileDarkToggle" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-neon">
+                    <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <nav id="sidebar-nav" class="mt-6 flex-1 px-4 space-y-2 overflow-y-auto no-scrollbar">
+                
+                <a href="javascript:void(0)" onclick="showPage('dashboard', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-bold rounded-xl bg-neon text-black shadow-[0_0_20px_rgba(223,249,118,0.2)] transition-all">
+                    <i class="fas fa-chart-line w-6 text-lg"></i>
+                    <span class="ml-3">Business Overview</span>
+                </a>
+                
+                <a href="javascript:void(0)" onclick="showPage('clients', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-all">
+                    <i class="fas fa-users w-6 text-lg"></i>
+                    <span class="ml-3">Client Roster</span>
+                </a>
+                
+                <a href="javascript:void(0)" onclick="showPage('pipeline', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-all">
+                    <i class="fas fa-file-signature w-6 text-lg"></i>
+                    <span class="ml-3">Service Pipeline</span>
+                    <span class="ml-auto text-[10px] uppercase tracking-widest px-2 py-1 rounded-md bg-neon/20 text-neondark font-bold">3 Due</span>
+                </a>
+                
+                <a href="javascript:void(0)" onclick="showPage('calendar', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-all">
+                    <i class="fas fa-calendar-check w-6 text-lg"></i>
+                    <span class="ml-3">Coaching Calendar</span>
+                </a>
+                
+                <a href="javascript:void(0)" onclick="showPage('settings', this)" class="nav-link flex items-center px-4 py-3.5 text-sm font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-all">
+                    <i class="fas fa-sliders w-6 text-lg"></i>
+                    <span class="ml-3">Global Settings</span>
+                </a>
+
+                <div class="border-t border-slate-200 dark:border-slate-800 my-6"></div>
+
+                <a href="login.html" class="flex items-center px-4 py-3.5 text-sm font-medium text-red-500 rounded-xl hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors">
+                    <i class="fas fa-sign-out-alt w-6"></i>
+                    <span class="ml-3">Admin Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-y-auto w-full relative">
+
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-neon/5 rounded-full blur-[150px] pointer-events-none z-0 hidden lg:block"></div>
+
+            <header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 px-6 py-4 sticky top-0 z-30 flex items-center justify-between">
+                <div>
+                    <h1 id="mainTitle" class="text-xl md:text-2xl font-heading font-black text-slate-900 dark:text-white">Business Overview</h1>
+                </div>
+
+                <div class="flex items-center gap-3 md:gap-5">
+                     <div class="flex items-center gap-3 px-2 py-1.5 md:px-3 bg-slate-100 dark:bg-slate-900 rounded-full border border-slate-200 dark:border-slate-700 cursor-pointer">
+                         <img src="images\Pro1.avif" alt="Admin Avatar" class="w-8 h-8 rounded-full object-cover border border-slate-300 dark:border-slate-600">
+                         <div class="hidden sm:block text-left pr-2">
+                             <p class="text-xs font-bold text-slate-900 dark:text-white leading-tight">Alex (Admin)</p>
+                             <p class="text-[9px] text-neon font-bold uppercase tracking-widest leading-tight">Master Access</p>
+                         </div>
+                     </div>
+ 
+                     <div class="hidden lg:flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 pl-3 md:pl-5">
+                         <button id="desktopRtlToggle" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-neon hover:bg-slate-800 transition-all shadow-sm">
+                             <span class="text-[10px] font-black uppercase">RTL</span>
+                         </button>
+                         <button id="desktopDarkToggle" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-neon hover:bg-slate-800 transition-all shadow-sm">
+                             <i id="desktopThemeIcon" class="fas fa-moon text-sm"></i>
+                         </button>
+                     </div>
+
+                     <button id="hamburgerBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black shadow-md">
+                         <i class="fas fa-bars text-lg"></i>
+                     </button>
+                 </div>
+            </header>
+
+            <div class="p-6 lg:p-10 space-y-8 max-w-[1440px] mx-auto w-full relative z-10">
+
+                <div id="page-dashboard" class="page-content active space-y-8">
+                    
+                    <div class="bg-slate-900 rounded-[2.5rem] p-8 lg:p-12 relative overflow-hidden shadow-2xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div class="absolute top-0 right-0 w-80 h-80 bg-neon/20 rounded-full blur-[100px] pointer-events-none"></div>
+                        <div class="relative z-10">
+                            <h2 class="text-3xl lg:text-4xl font-heading font-black text-white mb-2">Welcome to the cockpit, Alex.</h2>
+                            <p class="text-slate-400 font-medium max-w-xl leading-relaxed">
+                                You currently have <strong class="text-neon">3 resume drafts</strong> due this week and <strong class="text-neon">5 coaching calls</strong> scheduled. Let's get to work.
+                            </p>
+                        </div>
+                        <div class="relative z-10 shrink-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 flex items-center gap-5">
+                            <div class="w-12 h-12 rounded-xl bg-neon flex items-center justify-center text-black text-xl shadow-lg shrink-0">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-slate-300 font-bold mb-1">Status</p>
+                                <p class="font-heading font-bold text-white text-lg leading-none">Accepting Clients</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm relative group overflow-hidden">
+                            <div class="flex justify-between items-start mb-4">
+                                <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Monthly Revenue</p>
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white flex items-center justify-center"><i class="fas fa-dollar-sign"></i></div>
+                            </div>
+                            <h3 class="text-3xl font-heading font-black text-slate-900 dark:text-white mb-2">$14,250</h3>
+                            <div class="flex items-center gap-2 text-xs font-bold text-green-500">
+                                <i class="fas fa-arrow-up"></i> <span>+18% from last month</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm relative group overflow-hidden">
+                            <div class="flex justify-between items-start mb-4">
+                                <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Active Clients</p>
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white flex items-center justify-center"><i class="fas fa-users"></i></div>
+                            </div>
+                            <h3 class="text-4xl font-heading font-black text-slate-900 dark:text-white mb-2">12</h3>
+                            <div class="flex items-center gap-2 text-xs font-bold text-slate-500">
+                                <i class="fas fa-user-plus"></i> <span>3 onboard this week</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-neon rounded-3xl p-6 border border-neondark shadow-lg relative group overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/20 rounded-full group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+                            <div class="flex justify-between items-start mb-4 relative z-10">
+                                <p class="text-[10px] uppercase tracking-widest text-black/60 font-bold">Pending Drafts</p>
+                                <div class="w-10 h-10 rounded-xl bg-black/10 text-black flex items-center justify-center backdrop-blur-sm"><i class="fas fa-file-signature"></i></div>
+                            </div>
+                            <h3 class="text-4xl font-heading font-black text-black mb-2 relative z-10">3</h3>
+                            <div class="flex items-center gap-2 text-xs font-bold text-black/80 relative z-10">
+                                <i class="fas fa-clock"></i> <span>2 due in 48 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm relative group overflow-hidden">
+                            <div class="flex justify-between items-start mb-4">
+                                <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Upcoming Calls</p>
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white flex items-center justify-center"><i class="fas fa-video"></i></div>
+                            </div>
+                            <h3 class="text-4xl font-heading font-black text-slate-900 dark:text-white mb-2">5</h3>
+                            <div class="flex items-center gap-2 text-xs font-bold text-slate-500">
+                                <i class="fas fa-calendar"></i> <span>Scheduled for this week</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                        
+                        <div class="xl:col-span-2 bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-8 border-b border-slate-100 dark:border-slate-800 pb-4">
+                                <h2 class="text-xl font-heading font-bold text-slate-900 dark:text-white">Sales by Package</h2>
+                                <button class="text-[10px] font-bold uppercase tracking-widest text-slate-500 hover:text-neon transition-colors">View Report</button>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold text-slate-900 dark:text-white">The Executive Bundle</span>
+                                        <span class="text-slate-500 font-bold">62% of Sales</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3 overflow-hidden">
+                                        <div class="bg-neon h-3 rounded-full" style="width: 62%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold text-slate-900 dark:text-white">Resume Rewrite Only</span>
+                                        <span class="text-slate-500 font-bold">25% of Sales</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3 overflow-hidden">
+                                        <div class="bg-slate-400 dark:bg-slate-600 h-3 rounded-full" style="width: 25%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold text-slate-900 dark:text-white">A-la-carte Coaching</span>
+                                        <span class="text-slate-500 font-bold">13% of Sales</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3 overflow-hidden">
+                                        <div class="bg-slate-300 dark:bg-slate-700 h-3 rounded-full" style="width: 13%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 rounded-[2rem] p-8 shadow-xl relative overflow-hidden">
+                            <h2 class="text-xl font-heading font-bold text-white mb-6 border-b border-slate-800 pb-4">Admin Actions</h2>
+                            <div class="space-y-3">
+                                <button onclick="showPage('pipeline', document.querySelectorAll('.nav-link')[2])" class="w-full py-4 px-5 bg-white/5 border border-white/10 rounded-xl text-left flex items-center justify-between hover:bg-neon hover:text-black hover:border-neon transition-colors group text-white">
+                                    <span class="font-bold text-sm"><i class="fas fa-file-upload w-6"></i> Upload Draft</span>
+                                    <i class="fas fa-chevron-right text-xs opacity-50 group-hover:opacity-100"></i>
+                                </button>
+                                <button onclick="showPage('calendar', document.querySelectorAll('.nav-link')[3])" class="w-full py-4 px-5 bg-white/5 border border-white/10 rounded-xl text-left flex items-center justify-between hover:bg-neon hover:text-black hover:border-neon transition-colors group text-white">
+                                    <span class="font-bold text-sm"><i class="fas fa-video w-6"></i> Start Zoom Call</span>
+                                    <i class="fas fa-chevron-right text-xs opacity-50 group-hover:opacity-100"></i>
+                                </button>
+                                <button class="w-full py-4 px-5 bg-white/5 border border-white/10 rounded-xl text-left flex items-center justify-between hover:bg-neon hover:text-black hover:border-neon transition-colors group text-white">
+                                    <span class="font-bold text-sm"><i class="fas fa-envelope w-6"></i> Send Client Intake</span>
+                                    <i class="fas fa-chevron-right text-xs opacity-50 group-hover:opacity-100"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-clients" class="page-content space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+                        <div class="relative w-full sm:w-80">
+                            <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="text" placeholder="Search clients..." class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:outline-none focus:border-neon text-sm">
+                        </div>
+                        <button class="w-full sm:w-auto px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-black rounded-xl font-bold text-xs uppercase tracking-widest shadow-md hover:bg-neon dark:hover:bg-neon transition-colors">
+                            Export CSV
+                        </button>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                        <div class="overflow-x-auto no-scrollbar">
+                            <table class="w-full text-left text-sm">
+                                <thead class="bg-slate-50 dark:bg-slate-950/50 text-slate-500 text-[10px] uppercase tracking-widest border-b border-slate-200 dark:border-slate-800">
+                                    <tr>
+                                        <th class="px-6 py-5 font-bold">Client Info</th>
+                                        <th class="px-6 py-5 font-bold">Package</th>
+                                        <th class="px-6 py-5 font-bold">Status</th>
+                                        <th class="px-6 py-5 font-bold">Joined</th>
+                                        <th class="px-6 py-5 font-bold text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 dark:divide-slate-800/50">
+                                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-4">
+                                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" class="w-10 h-10 rounded-full object-cover">
+                                                <div>
+                                                    <p class="font-bold text-slate-900 dark:text-white text-base">Sarah Jenkins</p>
+                                                    <p class="text-xs text-slate-500">sarah@example.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 font-medium">Exec Bundle</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-3 py-1 bg-neon/20 text-neondark text-[10px] font-bold uppercase rounded-md border border-neon/30">Active</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-slate-500 font-medium">Oct 10, 2024</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <button class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-neon hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"><i class="fas fa-folder-open"></i></button>
+                                            <button class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-neon hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ml-1"><i class="fas fa-envelope"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-4">
+                                                <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center font-bold text-slate-500">MR</div>
+                                                <div>
+                                                    <p class="font-bold text-slate-900 dark:text-white text-base">Marcus Reed</p>
+                                                    <p class="text-xs text-slate-500">marcus@example.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 font-medium">Resume Only</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase rounded-md border border-blue-200 dark:border-blue-800/50">Drafting</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-slate-500 font-medium">Oct 08, 2024</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <button class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-neon hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"><i class="fas fa-folder-open"></i></button>
+                                            <button class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-neon hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ml-1"><i class="fas fa-envelope"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors opacity-70">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-4">
+                                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="w-10 h-10 rounded-full object-cover">
+                                                <div>
+                                                    <p class="font-bold text-slate-900 dark:text-white text-base">David Smith</p>
+                                                    <p class="text-xs text-slate-500">david@example.com</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 font-medium">Exec Bundle</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-500 text-[10px] font-bold uppercase rounded-md border border-slate-200 dark:border-slate-700">Completed</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-slate-500 font-medium">Sep 15, 2024</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <button class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-neon hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"><i class="fas fa-folder-open"></i></button>
+                                            <button class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-neon hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors ml-1"><i class="fas fa-envelope"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page-pipeline" class="page-content space-y-6">
+                    <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h2 class="text-2xl font-heading font-bold text-slate-900 dark:text-white">Active Deliverables</h2>
+                            <p class="text-sm text-slate-500 font-medium mt-1">Manage current resume and LinkedIn writing projects.</p>
+                        </div>
+                        <div class="text-xs font-bold bg-neon/20 text-neondark px-4 py-2 rounded-xl border border-neon/30">
+                            3 Drafts Due This Week
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <div class="bg-white dark:bg-slate-900 rounded-[2rem] p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="px-3 py-1 bg-red-50 dark:bg-red-500/10 text-red-500 text-[10px] font-bold uppercase tracking-widest rounded-md border border-red-100 dark:border-red-500/20">Due in 24h</span>
+                                <button class="text-slate-400 hover:text-neon"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-1">Sarah Jenkins</h3>
+                            <p class="text-xs text-slate-500 font-medium mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">Task: Resume V1 Draft</p>
+                            
+                            <div class="space-y-4 mb-6 flex-grow">
+                                <div class="flex items-center gap-3 text-sm">
+                                    <i class="fas fa-check-circle text-neon"></i> <span class="text-slate-600 dark:text-slate-400">Intake Form Received</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm">
+                                    <i class="fas fa-check-circle text-neon"></i> <span class="text-slate-600 dark:text-slate-400">Discovery Call Complete</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm">
+                                    <i class="far fa-circle text-slate-300 dark:text-slate-700"></i> <span class="font-bold text-slate-900 dark:text-white">Upload V1 Draft</span>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-black text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-neon dark:hover:bg-neon transition-colors shadow-md">
+                                <i class="fas fa-upload mr-2"></i> Upload File
+                            </button>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-900 rounded-[2rem] p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="px-3 py-1 bg-blue-50 dark:bg-blue-500/10 text-blue-500 text-[10px] font-bold uppercase tracking-widest rounded-md border border-blue-100 dark:border-blue-500/20">Waiting on Client</span>
+                                <button class="text-slate-400 hover:text-neon"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-1">Marcus Reed</h3>
+                            <p class="text-xs text-slate-500 font-medium mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">Task: Resume V2 Revisions</p>
+                            
+                            <div class="space-y-4 mb-6 flex-grow">
+                                <div class="flex items-center gap-3 text-sm">
+                                    <i class="fas fa-check-circle text-neon"></i> <span class="text-slate-600 dark:text-slate-400">V1 Draft Sent</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm">
+                                    <i class="far fa-circle text-slate-300 dark:text-slate-700"></i> <span class="font-bold text-slate-900 dark:text-white">Client Feedback Needed</span>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full py-3 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold uppercase tracking-widest rounded-xl hover:text-slate-900 dark:hover:text-white transition-colors">
+                                <i class="fas fa-bell mr-2"></i> Send Reminder
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="page-calendar" class="page-content space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
+                        <div>
+                            <h2 class="text-2xl font-heading font-bold text-slate-900 dark:text-white">Upcoming Sessions</h2>
+                            <p class="text-sm text-slate-500 font-medium mt-1">Your 1-on-1 coaching and discovery calls.</p>
+                        </div>
+                        <button class="w-full sm:w-auto px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-black rounded-xl font-bold text-xs uppercase tracking-widest shadow-md hover:bg-neon dark:hover:bg-neon transition-colors">
+                            Manage Calendar Link
+                        </button>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 p-8 shadow-sm">
+                        
+                        <div class="space-y-4">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 gap-4">
+                                <div class="flex items-center gap-5">
+                                    <div class="w-14 h-14 rounded-xl bg-neon/20 text-neondark flex flex-col items-center justify-center shrink-0">
+                                        <span class="text-[10px] font-bold uppercase tracking-widest leading-none mb-1">Today</span>
+                                        <span class="text-lg font-heading font-black leading-none">2:00</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">Salary Mock Interview</h4>
+                                        <p class="text-sm text-slate-500 font-medium"><i class="fas fa-user mr-1"></i> Sarah Jenkins</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3 w-full md:w-auto">
+                                    <button class="flex-1 md:flex-none px-6 py-3 bg-neon text-black rounded-xl text-sm font-bold shadow-md hover:bg-white transition-colors flex items-center justify-center gap-2">
+                                        <i class="fas fa-video"></i> Start Zoom
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row md:items-center justify-between p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 gap-4">
+                                <div class="flex items-center gap-5">
+                                    <div class="w-14 h-14 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex flex-col items-center justify-center shrink-0">
+                                        <span class="text-[10px] font-bold uppercase tracking-widest leading-none mb-1">Oct 15</span>
+                                        <span class="text-lg font-heading font-black leading-none">10:00</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-white text-lg">Free Discovery Call</h4>
+                                        <p class="text-sm text-slate-500 font-medium"><i class="fas fa-user mr-1"></i> New Lead: James W.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3 w-full md:w-auto">
+                                    <button class="flex-1 md:flex-none px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-black rounded-xl text-sm font-bold shadow-md hover:bg-neon dark:hover:bg-neon transition-colors flex items-center justify-center gap-2">
+                                        <i class="fas fa-video"></i> Join Link
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="page-settings" class="page-content">
+                    <div class="bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 max-w-3xl mx-auto overflow-hidden shadow-sm">
+                        
+                        <div class="p-8 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+                            <h2 class="text-2xl font-heading font-black text-slate-900 dark:text-white mb-1">Platform Settings</h2>
+                            <p class="text-sm text-slate-500 font-medium">Manage your availability, integrations, and admin profile.</p>
+                        </div>
+
+                        <div class="p-8 space-y-8">
+                            
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6 border-b border-slate-100 dark:border-slate-800 pb-2">Admin Profile</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Display Name</label>
+                                        <input type="text" value="Alex (Admin)" class="w-full px-5 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:border-neon outline-none transition-all text-slate-900 dark:text-white text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Support Email</label>
+                                        <input type="email" value="hello@careercraft.com" class="w-full px-5 py-3.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:border-neon outline-none transition-all text-slate-900 dark:text-white text-sm">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6 border-b border-slate-100 dark:border-slate-800 pb-2">Business Operations</h3>
+                                <div class="space-y-4">
+                                    <label class="flex items-center justify-between cursor-pointer p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-950 transition-colors">
+                                        <div>
+                                            <span class="block text-sm font-bold text-slate-900 dark:text-white mb-1">Accepting New Clients</span>
+                                            <span class="block text-xs text-slate-500 font-medium">Toggles the "Available" badge on your live website.</span>
+                                        </div>
+                                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-neondark focus:ring-neon" checked>
+                                    </label>
+                                    
+                                    <label class="flex items-center justify-between cursor-pointer p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-950 transition-colors">
+                                        <div>
+                                            <span class="block text-sm font-bold text-slate-900 dark:text-white mb-1">Automated Intake Forms</span>
+                                            <span class="block text-xs text-slate-500 font-medium">Send form instantly when a client pays via Stripe.</span>
+                                        </div>
+                                        <input type="checkbox" class="w-5 h-5 rounded border-slate-300 text-neondark focus:ring-neon" checked>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="pt-8 flex justify-end gap-4 border-t border-slate-200 dark:border-slate-800">
+                                <button class="px-8 py-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black font-bold text-sm shadow-lg hover:bg-neon hover:text-black dark:hover:bg-neon transition-all">Save Configuration</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        /* ===============================
+           TAB SWITCHING LOGIC
+        ================================ */
+        function showPage(pageId, element) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show target page
+            document.getElementById('page-' + pageId).classList.add('active');
+
+            // Update Header Title
+            const titles = {
+                'dashboard': 'Business Overview',
+                'clients': 'Client Roster',
+                'pipeline': 'Service Pipeline',
+                'calendar': 'Coaching Calendar',
+                'settings': 'Global Settings'
+            };
+            document.getElementById('mainTitle').innerText = titles[pageId];
+
+            // Reset Nav Styling
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('bg-neon', 'text-black', 'shadow-[0_0_20px_rgba(223,249,118,0.2)]');
+                link.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:bg-slate-100', 'dark:hover:bg-slate-800');
+                link.querySelector('span:first-of-type').classList.remove('font-bold');
+                link.querySelector('span:first-of-type').classList.add('font-medium');
+            });
+
+            // Set Active Nav Styling
+            if(element) {
+                element.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:bg-slate-100', 'dark:hover:bg-slate-800');
+                element.classList.add('bg-neon', 'text-black', 'shadow-[0_0_20px_rgba(223,249,118,0.2)]');
+                element.querySelector('span:first-of-type').classList.remove('font-medium');
+                element.querySelector('span:first-of-type').classList.add('font-bold');
+            }
+
+            // Close sidebar on mobile after clicking
+            if (window.innerWidth < 1024) closeSidebar();
+        }
+
+        /* ===============================
+           SIDEBAR, THEME & RTL LOGIC
+        ================================ */
+        const htmlElement = document.documentElement;
+        const desktopThemeBtn = document.getElementById("desktopDarkToggle");
+        const desktopThemeIcon = document.getElementById("desktopThemeIcon");
+        const desktopRtlBtn = document.getElementById("desktopRtlToggle");
+        
+        const mobileThemeBtn = document.getElementById("mobileDarkToggle");
+        const mobileThemeIcon = document.getElementById("mobileThemeIcon");
+        const mobileRtlBtn = document.getElementById("mobileRtlToggle");
+        
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+
+        // Theme initialization
+        function applyTheme() {
+            let theme = localStorage.getItem('careercraft-dark') === 'true';
+            if (theme) {
+                htmlElement.classList.add('dark');
+                if (desktopThemeIcon) desktopThemeIcon.className = 'fas fa-sun text-neon';
+                if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-sun text-neon';
+            } else {
+                htmlElement.classList.remove('dark');
+                if (desktopThemeIcon) desktopThemeIcon.className = 'fas fa-moon';
+                if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('careercraft-dark', isDark);
+            applyTheme();
+        }
+
+        if (desktopThemeBtn) desktopThemeBtn.addEventListener('click', toggleTheme);
+        if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
+
+        // RTL Logic
+        function toggleRTL() {
+            const currentDir = htmlElement.getAttribute("dir");
+            const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+            htmlElement.setAttribute("dir", newDir);
+            localStorage.setItem("careercraft-rtl", newDir);
+        }
+
+        if (desktopRtlBtn) desktopRtlBtn.addEventListener('click', toggleRTL);
+        if (mobileRtlBtn) mobileRtlBtn.addEventListener('click', toggleRTL);
+
+        // Sidebar Logic for Mobile
+        function openSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.remove('opacity-100');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+            document.body.style.overflow = '';
+        }
+
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openSidebar);
+        if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+        if (overlay) overlay.addEventListener('click', closeSidebar);
+
+        // Init page load
+        applyTheme();
+        const savedRTL = localStorage.getItem("careercraft-rtl");
+        if (savedRTL) htmlElement.setAttribute("dir", savedRTL);
+    </script>
+</body>
+</html>

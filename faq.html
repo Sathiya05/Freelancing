@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ & Support | CareerCraft Resume Writer & Coach</title>
+
+    <script src="tailwind.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      <link rel="icon" href="images\logo.jpeg">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#DFF976',
+                        neondark: '#B4D628',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap');
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .transition-theme {
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
+        /* Background grid */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(148, 163, 184, 0.2) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .dark .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+
+        /* Custom Accordion Styles */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans transition-theme overflow-x-hidden">
+
+    <div id="navbar"></div>
+
+  <section class="relative h-screen flex items-center justify-center overflow-hidden transition-theme">
+        
+        <img src="images\img11.avif" 
+             alt="FAQ Support Background" 
+             class="absolute inset-0 w-full h-full object-cover z-0 object-center">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-slate-950"></div>
+        
+        <div class="absolute inset-0 bg-grid-pattern z-0 pointer-events-none opacity-40"></div>
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-neon/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
+        <div class="relative z-10 max-w-[800px] mx-auto px-6 lg:px-10 text-center w-full">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 mb-6 shadow-sm">
+                <i class="fa-solid fa-circle-question text-neondark text-xs"></i>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Support & Clarity</span>
+            </div>
+
+            <h1 class="text-5xl md:text-6xl font-heading font-weight-600 font-bold text-slate-200 dark:text-white leading-[1.1] mb-6 tracking-tight">
+                How can we help you <br>
+                <span class=" bg-clip-text text-neondark">level up?</span>
+            </h1>
+
+            <p class="text-lg text-slate-200 dark:text-slate-400 mb-10 leading-relaxed font-medium">
+                Everything you need to know about the CareerCraft process, pricing, guarantees, and how we engineer your professional brand.
+            </p>
+
+            <div class="relative max-w-xl mx-auto group">
+                <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-magnifying-glass text-slate-400 group-focus-within:text-neon transition-colors"></i>
+                </div>
+                <input type="text" placeholder="Search for answers (e.g., 'turnaround time')" class="w-full pl-12 pr-32 py-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all shadow-2xl font-medium text-lg">
+                <button class="absolute inset-y-2 right-2 px-6 bg-slate-900 dark:bg-white text-white dark:text-black font-bold rounded-xl hover:bg-neon hover:text-black dark:hover:bg-neon transition-colors text-sm shadow-md">
+                    Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-y border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 transition-theme">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-slate-200 dark:divide-slate-800">
+                <div class="px-4">
+                    <i class="fa-solid fa-bolt text-neondark text-xl mb-2"></i>
+                    <p class="font-bold text-slate-900 dark:text-white text-sm">24hr Response Time</p>
+                </div>
+                <div class="px-4">
+                    <i class="fa-solid fa-shield-halved text-neondark text-xl mb-2"></i>
+                    <p class="font-bold text-slate-900 dark:text-white text-sm">Secure Checkout</p>
+                </div>
+                <div class="px-4">
+                    <i class="fa-solid fa-user-tie text-neondark text-xl mb-2"></i>
+                    <p class="font-bold text-slate-900 dark:text-white text-sm">1-on-1 Direct Access</p>
+                </div>
+                <div class="px-4">
+                    <i class="fa-solid fa-star text-neondark text-xl mb-2"></i>
+                    <p class="font-bold text-slate-900 dark:text-white text-sm">5-Star Rated Coach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <section class="py-24 bg-white dark:bg-slate-950 transition-theme">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+            
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                
+                <div class="lg:col-span-4 sticky top-32 hidden lg:block">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Categories</h3>
+                    
+                    <ul class="space-y-2 mb-10">
+                        <li>
+                            <a href="#general" class="block px-6 py-4 rounded-xl bg-neon text-black font-bold text-lg shadow-md transition-all">
+                                General Questions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#process" class="block px-6 py-4 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 font-bold text-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                                The Process
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="block px-6 py-4 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 font-bold text-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                                Pricing & Payment
+                            </a>
+                        </li>
+                    
+                    </ul>
+
+                    <div class="relative rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="1-on-1 Coaching" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="relative h-[380px] flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent">
+                            <div class="w-12 h-12 bg-neon rounded-full flex items-center justify-center text-black mb-4 shadow-[0_0_20px_rgba(223,249,118,0.4)]">
+                                <i class="fa-solid fa-phone-volume text-lg"></i>
+                            </div>
+                            <h4 class="text-2xl font-heading font-bold text-white mb-2">Still need answers?</h4>
+                            <p class="text-slate-300 text-sm font-medium mb-5 leading-relaxed">Book a free 15-minute alignment call. We'll map out your career strategy live.</p>
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-sm font-bold text-neon hover:text-white transition-colors group/btn">
+                                Schedule Free Call <i class="fa-solid fa-arrow-right transition-transform group-hover/btn:translate-x-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-16">
+                    
+                    <div id="general" class="scroll-mt-32">
+                        <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">General Questions</h2>
+                        
+                        <div class="space-y-4">
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors" open>
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    What makes you different from cheap resume mills?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    Resume mills use automated templates and outsource writing overseas to people who have never worked in corporate HR. I personally work 1-on-1 with you. You are paying for my 10+ years of insider recruiting experience, strategic positioning, and understanding of recruiter psychology, not just a typing service.
+                                </div>
+                            </details>
+
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors">
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    Do you guarantee I will get a job?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    No ethical coach can guarantee a job, as final hiring decisions are entirely out of our control. However, I *do* guarantee a significant increase in your interview request rate. If you don't see a 2x increase in recruiter callbacks within 60 days of using your new assets, I will rewrite your documents for free.
+                                </div>
+                            </details>
+
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors">
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    I'm pivoting to a totally new industry. Can you still help?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    Absolutely. Career pivots are one of my specialties. We will focus entirely on your *transferable skills*—translating the impact you made in your past career into the language and metrics that hiring managers in your new target industry care about.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div id="process" class="scroll-mt-32">
+                        <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">The Process</h2>
+                        
+                        <div class="space-y-4">
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors">
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    How long does the whole process take?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    Standard turnaround is 5-7 business days after our initial 60-minute discovery call. The total timeline depends on how quickly you provide feedback during the revision stage. On average, clients have their final, market-ready documents in their hands within 10 days.
+                                </div>
+                            </details>
+
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors">
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    What formats will I receive my resume in?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    You will receive a perfectly formatted, ATS-compliant PDF document for your immediate applications, as well as an fully editable Microsoft Word (.DOCX) file so you can make minor tweaks and updates to your resume in the future without needing to hire me again.
+                                </div>
+                            </details>
+
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors">
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    How many revisions do I get?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    All packages include two (2) rounds of comprehensive revisions. I want to ensure your documents sound authentically like *you* while maintaining the strategic framing necessary to get you hired. 
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div id="pricing" class="scroll-mt-32">
+                        <h2 class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">Pricing & Payment</h2>
+                        
+                        <div class="space-y-4">
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors">
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    Do you offer payment plans?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    Yes! I understand that investing in your career is a big step. We partner with Klarna and Afterpay at checkout, allowing you to split your payment into 4 interest-free installments.
+                                </div>
+                            </details>
+
+                            <details class="group border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 open:bg-white dark:open:bg-slate-950 open:border-neondark transition-colors">
+                                <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-slate-900 dark:text-white text-lg">
+                                    Can I upgrade my package later?
+                                    <span class="transition group-open:rotate-180 text-neondark"><i class="fa-solid fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="p-6 pt-0 text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                                    Absolutely. If you start with just the Resume Rewrite and decide a week later that you also want LinkedIn Optimization or Mock Interview Prep, I will honor the discounted "Bundle" pricing and simply invoice you for the difference.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 dark:bg-slate-950 transition-theme">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <span class="text-neondark font-bold uppercase tracking-widest text-xs mb-4 block">Still Unsure?</span>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-6">Let's clear things up.</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-8">
+                        If your specific question wasn't answered in the FAQ above, drop me a message directly. I personally read and respond to every inquiry within 24 hours.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-neondark text-lg shadow-sm">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900 dark:text-white">Email Me</p>
+                                <p class="text-slate-500 text-sm">alex@careercraft.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-neondark text-lg shadow-sm">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900 dark:text-white">Connect on LinkedIn</p>
+                                <a href="#" class="text-slate-500 text-sm hover:text-neondark transition-colors">linkedin.com/in/careercraft</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-800">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-900 dark:text-white">First Name</label>
+                                <input type="text" class="w-full px-5 py-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-neon transition-colors" placeholder="John">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-900 dark:text-white">Email Address</label>
+                                <input type="email" class="w-full px-5 py-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-neon transition-colors" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-900 dark:text-white">What's on your mind?</label>
+                            <textarea rows="4" class="w-full px-5 py-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-neon transition-colors resize-none" placeholder="Hey Alex, I had a question about the Bundle Package..."></textarea>
+                        </div>
+
+                        <button type="button" class="w-full py-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black font-bold text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 shadow-lg">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white dark:bg-slate-950 transition-theme border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+            <div class="relative rounded-3xl overflow-hidden bg-neon p-10 md:p-16 text-center shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/30 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-2xl mx-auto text-slate-900">
+                    <h2 class="text-4xl md:text-5xl font-heading font-black mb-6">Got your answers? Let's get to work.</h2>
+                    <p class="text-lg font-medium mb-10 opacity-80 text-slate-800">Your next career leap is waiting. Let's build the assets and the strategy to make it happen right now.</p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="contact.html" class="px-8 py-4 rounded-xl bg-black text-white font-bold text-sm hover:scale-105 transition-transform duration-300 shadow-xl">
+                            Book Your Strategy Call
+                        </a>
+                        <a href="services.html" class="px-8 py-4 rounded-xl border-2 border-black text-black font-bold text-sm hover:bg-black hover:text-white transition-colors duration-300">
+                            View Services & Pricing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+
+</html>
