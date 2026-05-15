@@ -155,7 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
     .dark .mobile-link.active, .dark .mobile-sublink.active, .dark #mobileHomeBtn.active, .dark #mobileDashBtn.active {
       color: #DFF976 !important;
     }
-    
+    @media(max-width:1280px){
+    #desktopNav{
+            gap: 5px;
+    }
+    }
     /* Added !important to guarantee display toggling works */
     #mobileMenu.hidden { display: none !important; }
     #mobileMenu:not(.hidden) { display: flex !important; }
