@@ -4,124 +4,126 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!navbar) return;
 
   navbar.innerHTML = `
-<nav class="fixed top-0 left-0 w-full z-[100] transition-colors duration-500 bg-white/90 dark:bg-black backdrop-blur-xl border-b border-gray-200 dark:border-slate-800">
-  <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-20 md:h-24 gap-8">
+<nav class="fixed top-0 left-0 w-full z-[100] transition-colors duration-500">
+  <div class="relative z-[70] bg-white dark:bg-black border-b border-gray-200 dark:border-slate-800">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div class="flex items-center justify-between h-20 md:h-24 gap-8">
 
-      <a href="index.html" class="relative z-[60] flex items-center gap-3 group shrink-0">
-        <div class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20">
-          <i class="fa-solid fa-briefcase text-black text-lg"></i>
-        </div>
-        <div class="flex flex-col">
-          <span class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
-            Career<span class="text-[#B4D628]">Craft</span>
-          </span>
-          <span class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
-            Premium Coaching
-          </span>
-        </div>
-      </a>
+        <a href="index.html" class="relative z-[60] flex items-center gap-3 group shrink-0">
+          <div class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20">
+            <i class="fa-solid fa-briefcase text-black text-lg"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
+              Career<span class="text-[#B4D628]">Craft</span>
+            </span>
+            <span class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
+              Premium Coaching
+            </span>
+          </div>
+        </a>
 
-      <div id="desktopNav" class="hidden xl:flex items-center justify-center gap-2 text-[14px] font-semibold flex-1">
-        
-        <div class="relative group/home">
-          <button id="homeBtn" class="nav-link flex items-center space-x-1 px-3 py-2 transition-all duration-300 text-slate-700 dark:text-slate-200">
-            <span>Home</span>
-            <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 group-hover/home:rotate-180 text-slate-400"></i>
-          </button>
-          <div id="homeMenu" class="hidden absolute left-0 mt-2 w-52 bg-white dark:bg-slate-900 shadow-xl rounded-xl py-2 z-50 border border-gray-100 dark:border-slate-800">
-            <a href="index.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">Home 1</a>
-            <a href="home2.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">Home 2</a>
+        <div id="desktopNav" class="hidden xl:flex items-center justify-center gap-2 text-[14px] font-semibold flex-1">
+          
+          <div class="relative group/home">
+            <button id="homeBtn" class="nav-link flex items-center space-x-1 px-3 py-2 transition-all duration-300 text-slate-700 dark:text-slate-200">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 group-hover/home:rotate-180 text-slate-400"></i>
+            </button>
+            <div id="homeMenu" class="hidden absolute left-0 mt-2 w-52 bg-white dark:bg-slate-900 shadow-xl rounded-xl py-2 z-50 border border-gray-100 dark:border-slate-800">
+              <a href="index.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">Home 1</a>
+              <a href="home2.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">Home 2</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">About</a>
+          <a href="services.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Services</a>
+          <a href="resume.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Resume</a>
+          <a href="coaching.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Coaching</a>
+          <a href="faq.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">FAQ</a>
+          <a href="contact.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Contact</a>
+          
+          <div class="relative group/dash">
+            <button id="dashBtn" class="nav-link flex items-center space-x-1 px-3 py-2 transition-all duration-300 text-slate-700 dark:text-slate-200">
+              <span>Dashboard</span>
+              <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 group-hover/dash:rotate-180 text-slate-400"></i>
+            </button>
+            <div id="dashMenu" class="hidden absolute left-0 mt-2 w-52 bg-white dark:bg-slate-900 shadow-xl rounded-xl py-2 z-50 border border-gray-100 dark:border-slate-800">
+              <a href="user.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">User</a>
+              <a href="admin.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">Admin</a>
+            </div>
           </div>
         </div>
 
-        <a href="about.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">About</a>
-        <a href="services.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Services</a>
-        <a href="resume.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Resume</a>
-        <a href="coaching.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Coaching</a>
-        <a href="faq.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">FAQ</a>
-        <a href="contact.html" class="nav-link px-3 py-2 text-slate-700 dark:text-slate-200">Contact</a>
-        
-        <div class="relative group/dash">
-          <button id="dashBtn" class="nav-link flex items-center space-x-1 px-3 py-2 transition-all duration-300 text-slate-700 dark:text-slate-200">
-            <span>Dashboard</span>
-            <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 group-hover/dash:rotate-180 text-slate-400"></i>
-          </button>
-          <div id="dashMenu" class="hidden absolute left-0 mt-2 w-52 bg-white dark:bg-slate-900 shadow-xl rounded-xl py-2 z-50 border border-gray-100 dark:border-slate-800">
-            <a href="user.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">User</a>
-            <a href="admin.html" class="dropdown-link block px-5 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">Admin</a>
+        <div class="relative z-[60] hidden xl:flex items-center gap-4 shrink-0">
+          <div class="flex items-center gap-2">
+            <button id="rtlToggle" class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:border-[#DFF976] hover:text-black dark:hover:text-white transition-all">
+              <i class="fa-solid fa-language text-lg"></i>
+            </button>
+            <button id="darkToggle" class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:border-[#DFF976] hover:text-black dark:hover:text-white transition-all">
+              <i id="darkIcon" class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+          <div class="flex items-center gap-3 ml-2">
+              <a href="login.html" class="flex items-center justify-center px-5 py-2.5 rounded-xl border border-[#DFF976] text-black dark:text-black font-bold text-sm  bg-[#DFF976] hover:bg-white hover:text-black dark:hover:text-black transition-all duration-300">Log In</a>
+              <a href="signup.html" class="flex items-center justify-center px-6 py-2.5 rounded-xl bg-slate-900 dark:bg-[#DFF976] text-white dark:text-black font-bold text-sm hover:scale-105 transition-transform duration-300 shadow-lg shadow-black/5 dark:shadow-[#DFF976]/10">Sign Up</a>
           </div>
         </div>
-      </div>
 
-      <div class="relative z-[60] hidden xl:flex items-center gap-4 shrink-0">
-        <div class="flex items-center gap-2">
-          <button id="rtlToggle" class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:border-[#DFF976] hover:text-black dark:hover:text-white transition-all">
-            <i class="fa-solid fa-language text-lg"></i>
-          </button>
-          <button id="darkToggle" class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:border-[#DFF976] hover:text-black dark:hover:text-white transition-all">
-            <i id="darkIcon" class="fa-solid fa-moon"></i>
+        <div class="relative z-[60] xl:hidden flex items-center h-full">
+          <button id="mobileBtn" class="w-10 h-10 flex items-center justify-center text-slate-900 dark:text-white focus:outline-none">
+            <i id="mobileIcon" class="fa-solid fa-bars-staggered text-2xl"></i>
           </button>
         </div>
-        <div class="flex items-center gap-3 ml-2">
-            <a href="login.html" class="flex items-center justify-center px-5 py-2.5 rounded-xl border border-[#DFF976] text-black dark:text-black font-bold text-sm  bg-[#DFF976] hover:bg-white hover:text-black dark:hover:text-black transition-all duration-300">Log In</a>
-            <a href="signup.html" class="flex items-center justify-center px-6 py-2.5 rounded-xl bg-slate-900 dark:bg-[#DFF976] text-white dark:text-black font-bold text-sm hover:scale-105 transition-transform duration-300 shadow-lg shadow-black/5 dark:shadow-[#DFF976]/10">Sign Up</a>
-        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="relative z-[60] xl:hidden flex items-center h-full">
-        <button id="mobileBtn" class="w-10 h-10 flex items-center justify-center text-slate-900 dark:text-white focus:outline-none">
-          <i id="mobileIcon" class="fa-solid fa-bars-staggered text-2xl"></i>
+  <div id="mobileMenu" class="fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-black z-[50] flex-col px-6 pt-28 pb-20 xl:hidden hidden overflow-y-auto">
+    <div id="mobileNavLinks" class="flex flex-col gap-2 text-sm font-bold">
+      
+      <div class="w-full border-b border-slate-100 dark:border-slate-800">
+        <button id="mobileHomeBtn" class="flex items-center justify-between w-full py-4 text-slate-900 dark:text-white">
+          <span>Home</span>
+          <i id="mobileHomeIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
         </button>
+        <div id="mobileHomeMenu" class="hidden flex-col bg-white dark:bg-slate-900 rounded-xl mb-4 overflow-hidden">
+          <a href="index.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Home 1</a>
+          <a href="home2.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Home 2</a>
+        </div>
+      </div>
+
+      <a href="about.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white">About</a>
+      <a href="services.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white">Services</a>
+      <a href="resume.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white">Resume</a>
+      <a href="coaching.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white">Coaching</a>
+      <a href="faq.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white">FAQ</a>
+      <a href="contact.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800 text-slate-900 dark:text-white">Contact</a>
+      
+      <div class="w-full border-b border-slate-100 dark:border-slate-800">
+        <button id="mobileDashBtn" class="flex items-center justify-between w-full py-4 text-slate-900 dark:text-white">
+          <span>Dashboard</span>
+          <i id="mobileDashIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div id="mobileDashMenu" class="hidden flex-col bg-white dark:bg-slate-900 rounded-xl mb-4 overflow-hidden">
+          <a href="user.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">User</a>
+          <a href="admin.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Admin</a>
+        </div>
       </div>
     </div>
 
-    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-slate-950 z-[50] flex-col px-6 pt-28 pb-20 xl:hidden hidden overflow-y-auto">
-      <div id="mobileNavLinks" class="flex flex-col gap-2 text-sm font-bold">
-        
-        <div class="w-full border-b border-slate-100 dark:border-slate-800/50">
-          <button id="mobileHomeBtn" class="flex items-center justify-between w-full py-4 text-slate-900 dark:text-white">
-            <span>Home</span>
-            <i id="mobileHomeIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
-          </button>
-          <div id="mobileHomeMenu" class="hidden flex-col bg-slate-50 dark:bg-slate-900/50 rounded-xl mb-4 overflow-hidden">
-            <a href="index.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Home 1</a>
-            <a href="home2.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Home 2</a>
-          </div>
-        </div>
-
-        <a href="about.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800/50 text-slate-900 dark:text-white">About</a>
-        <a href="services.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800/50 text-slate-900 dark:text-white">Services</a>
-        <a href="resume.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800/50 text-slate-900 dark:text-white">Resume</a>
-        <a href="coaching.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800/50 text-slate-900 dark:text-white">Coaching</a>
-        <a href="faq.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800/50 text-slate-900 dark:text-white">FAQ</a>
-        <a href="contact.html" class="mobile-link py-4 border-b border-slate-100 dark:border-slate-800/50 text-slate-900 dark:text-white">Contact</a>
-        
-        <div class="w-full border-b border-slate-100 dark:border-slate-800/50">
-          <button id="mobileDashBtn" class="flex items-center justify-between w-full py-4 text-slate-900 dark:text-white">
-            <span>Dashboard</span>
-            <i id="mobileDashIcon" class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
-          </button>
-          <div id="mobileDashMenu" class="hidden flex-col bg-slate-50 dark:bg-slate-900/50 rounded-xl mb-4 overflow-hidden">
-            <a href="user.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">User</a>
-            <a href="admin.html" class="mobile-sublink block px-6 py-4 text-base text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Admin</a>
-          </div>
-        </div>
+    <div class="btns mt-auto pt-8 flex flex-col gap-4">
+      <div class="flex items-center gap-3">
+        <button id="mobileRtlToggle" class="flex-1 flex items-center justify-center gap-2 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 font-bold text-sm text-slate-600 dark:text-slate-300 hover:border-[#DFF976] transition-all">
+           <i class="fa-solid fa-language"></i> RTL Mode
+        </button>
+        <button id="mobileDarkToggle" class="flex-1 flex items-center justify-center gap-2 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 font-bold text-sm text-slate-600 dark:text-slate-300 hover:border-[#DFF976] transition-all">
+          <i id="mobileDarkIcon" class="fa-solid fa-moon"></i> Theme
+        </button>
       </div>
-
-      <div class="btns mt-auto pt-8 flex flex-col gap-4">
-        <div class="flex items-center gap-3">
-          <button id="mobileRtlToggle" class="flex-1 flex items-center justify-center gap-2 bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 font-bold text-sm text-slate-600 dark:text-slate-300 hover:border-[#DFF976] transition-all">
-             <i class="fa-solid fa-language"></i> RTL Mode
-          </button>
-          <button id="mobileDarkToggle" class="flex-1 flex items-center justify-center gap-2 bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 font-bold text-sm text-slate-600 dark:text-slate-300 hover:border-[#DFF976] transition-all">
-            <i id="mobileDarkIcon" class="fa-solid fa-moon"></i> Theme
-          </button>
-        </div>
-        <div class="flex flex-col gap-3">
-          <a href="login.html" class="w-full py-4 flex items-center justify-center rounded-xl bg-[#DFF97610] border-2 border-[#DFF976] text-[#B4D628] font-bold text-sm shadow-sm hover:bg-[#DFF976] hover:text-black transition-all">Log In</a>
-          <a href="signup.html" class="w-full py-4 flex items-center justify-center rounded-xl bg-[#DFF976] text-black font-bold text-sm shadow-lg shadow-[#DFF976]/20">Sign Up</a>
-        </div>
+      <div class="flex flex-col gap-3">
+        <a href="login.html" class="w-full py-4 flex items-center justify-center rounded-xl bg-[#DFF97610] border-2 border-[#DFF976] text-[#B4D628] font-bold text-sm shadow-sm hover:bg-[#DFF976] hover:text-black transition-all">Log In</a>
+        <a href="signup.html" class="w-full py-4 flex items-center justify-center rounded-xl bg-[#DFF976] text-black font-bold text-sm shadow-lg shadow-[#DFF976]/20">Sign Up</a>
       </div>
     </div>
   </div>
