@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <li><a href="about.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">About Me</a></li>
         <li><a href="services.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">All Services</a></li>
         <li><a href="pricing.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">Pricing Plans</a></li>
-        <li><a href="faq.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">FAQ</a></li>
         <li><a href="contact.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">Contact</a></li>
       </ul>
     </div>
@@ -58,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="md:col-span-4 lg:col-span-2">
       <h3 class="text-sm font-black mb-6 uppercase tracking-widest text-slate-900 dark:text-white border-b-2 inline-block pb-2 border-[#DFF976]">Expertise</h3>
       <ul class="space-y-3 text-sm font-semibold">
-        <li><a href="resume.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">Executive Resumes</a></li>
-        <li><a href="linkedin.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">LinkedIn Makeover</a></li>
+        <li><a href="resume.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300"> Resumes</a></li>
+        <li><a href="linkedin.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">LinkedIn </a></li>
         <li><a href="coaching.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">Interview Prep</a></li>
         <li><a href="career.html" class="footer-link block text-slate-600 dark:text-slate-400 transition-all duration-300">Career Strategy</a></li>
       </ul>
@@ -86,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="border-t border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-colors duration-500">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row gap-4 justify-between items-center text-[10px] uppercase tracking-[0.15em] font-bold text-slate-500 dark:text-slate-500">
       
-      <p>© ${new Date().getFullYear()} Alex Chen Coaching. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} Career Craft Coaching. All rights reserved.</p>
 
       <div class="flex gap-6">
         <a href="#" class="hover:text-[#B4D628] dark:hover:text-[#DFF976] transition-colors duration-300">Privacy Policy</a>
