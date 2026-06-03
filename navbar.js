@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="relative z-[60] hidden xl:flex items-center gap-4 shrink-0">
           <div class="flex items-center gap-2">
             <button id="rtlToggle" class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:border-[#DFF976] hover:text-black dark:hover:text-white transition-all">
-              <i class="fa-solid fa-language text-lg"></i>
+              <i class="fa-solid fa-globe"></i>
             </button>
             <button id="darkToggle" class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-600 dark:text-slate-400 hover:border-[#DFF976] hover:text-black dark:hover:text-white transition-all">
               <i id="darkIcon" class="fa-solid fa-moon"></i>
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="flex items-center gap-3 ml-2">
               <a href="login.html" class="flex items-center justify-center px-5 py-2.5 rounded-xl border border-[#DFF976] text-black dark:text-black font-bold text-sm  bg-[#DFF976] hover:bg-white hover:text-black dark:hover:text-black transition-all duration-300">Log In</a>
-              <a href="signup.html" class="flex items-center justify-center px-6 py-2.5 rounded-xl bg-slate-900 dark:bg-[#DFF976] text-white dark:text-black font-bold text-sm hover:scale-105 transition-transform duration-300 shadow-lg shadow-black/5 dark:shadow-[#DFF976]/10">Sign Up</a>
+              <a href="signup.html" class="flex items-center justify-center px-6 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black font-bold text-sm hover:scale-105 transition-transform duration-300 shadow-lg shadow-black/5 dark:shadow-[#DFF976]/10">Sign Up</a>
           </div>
         </div>
 
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggles = [document.getElementById("darkToggle"), document.getElementById("mobileDarkToggle")];
 
   const updateIcons = (isDark) => {
-    const iconClass = isDark ? "fa-solid fa-wand-magic-sparkles text-[#DFF976]" : "fa-solid fa-moon";
+    const iconClass = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
     if (document.getElementById("darkIcon")) document.getElementById("darkIcon").className = iconClass;
     if (document.getElementById("mobileDarkIcon")) document.getElementById("mobileDarkIcon").className = iconClass;
   };
