@@ -1,4 +1,4 @@
-// CareerCraft - Premium Freelance Resume Writer & Career Coach Footer
+// Alex Chen - Personal Resume Writer & Career Coach Footer
 document.addEventListener("DOMContentLoaded", () => {
   const footer = document.getElementById("footer");
   if (!footer) return;
@@ -9,32 +9,37 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-16 grid gap-12 grid-cols-1 md:grid-cols-12">
 
     <div class="md:col-span-12 lg:col-span-4 pr-0 lg:pr-8">
-      <a href="index.html" class="flex items-center gap-3 group shrink-0 mb-6">
-        <div class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20 transition-transform duration-300 ">
-          <i class="fa-solid fa-briefcase text-black text-lg"></i>
-        </div>
-        <div class="flex flex-col">
-          <span class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
-            Career<span class="text-[#B4D628]">Craft</span>
-          </span>
-          <span class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
-            Premium Coaching
-          </span>
-        </div>
-      </a>
+    
+               <a href="index.html" class="relative z-[60] flex items-center gap-3 group shrink-0">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20">
+                        <i class="fa-solid fa-briefcase text-black text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
+                            Career<span class="text-[#B4D628]">Craft</span>
+                        </span>
+                        <span
+                            class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
+                            Resume Writer & Coach
+                        </span>
+                    </div>
+                </a>
+                <br>
       <p class="text-sm font-medium text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-        Empowering professionals to land their dream jobs. We craft standout resumes, optimize LinkedIn profiles, and provide strategic career guidance to elevate your trajectory.
+        I help ambitious professionals land their dream roles. With 10+ years as a corporate recruiter, I craft ATS-optimized resumes, optimize LinkedIn profiles, and provide 1-on-1 career coaching to elevate your trajectory.
       </p>
       
       <div class="mt-8 flex gap-3">
-        <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-all duration-300 hover:bg-[#DFF976] hover:border-[#DFF976] hover:text-black dark:hover:bg-[#DFF976] dark:hover:text-black shadow-sm">
+        <a href="https://linkedin.com/in/alexchencareers" target="_blank" class="social-icon w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-all duration-300 hover:bg-[#DFF976] hover:border-[#DFF976] hover:text-black dark:hover:bg-[#DFF976] dark:hover:text-black shadow-sm">
           <i class="fa-brands fa-linkedin-in text-lg"></i>
         </a>
-        <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-all duration-300 hover:bg-[#DFF976] hover:border-[#DFF976] hover:text-black dark:hover:bg-[#DFF976] dark:hover:text-black shadow-sm">
-          <i class="fa-brands fa-x-twitter text-lg"></i>
+        <a href="https://calendly.com/alexchen" target="_blank" class="social-icon w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-all duration-300 hover:bg-[#DFF976] hover:border-[#DFF976] hover:text-black dark:hover:bg-[#DFF976] dark:hover:text-black shadow-sm">
+          <i class="fa-regular fa-calendar text-lg"></i>
         </a>
-        <a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-all duration-300 hover:bg-[#DFF976] hover:border-[#DFF976] hover:text-black dark:hover:bg-[#DFF976] dark:hover:text-black shadow-sm">
-          <i class="fa-brands fa-instagram text-lg"></i>
+        <a href="mailto:alex@alexchen.careers" class="social-icon w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-all duration-300 hover:bg-[#DFF976] hover:border-[#DFF976] hover:text-black dark:hover:bg-[#DFF976] dark:hover:text-black shadow-sm">
+          <i class="fa-solid fa-envelope text-lg"></i>
         </a>
       </div>
     </div>
@@ -63,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="md:col-span-4 lg:col-span-4">
       <h3 class="text-sm font-black mb-6 uppercase tracking-widest text-slate-900 dark:text-white border-b-2 inline-block pb-2 border-[#DFF976]">Career Insights</h3>
       <p class="text-sm font-medium text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
-        Subscribe to get weekly job market trends, ATS-friendly resume tips, and exclusive coaching discounts delivered to your inbox.
+        Subscribe to get my weekly job market insights, ATS-friendly resume tips, and exclusive coaching discounts delivered to your inbox.
       </p>
 
       <form class="flex flex-col gap-3" id="newsletterForm">
@@ -81,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="border-t border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-colors duration-500">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row gap-4 justify-between items-center text-[10px] uppercase tracking-[0.15em] font-bold text-slate-500 dark:text-slate-500">
       
-      <p>© ${new Date().getFullYear()} CareerCraft. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} Alex Chen Coaching. All rights reserved.</p>
 
       <div class="flex gap-6">
         <a href="#" class="hover:text-[#B4D628] dark:hover:text-[#DFF976] transition-colors duration-300">Privacy Policy</a>

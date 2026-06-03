@@ -1,4 +1,4 @@
-// CareerCraft - Premium Freelance Resume Writer & Career Coach Navbar
+// Alex Chen - Personal Resume Writer & Career Coach Navbar
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   if (!navbar) return;
@@ -9,19 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
       <div class="flex items-center justify-between h-20 md:h-24 gap-8">
 
-        <a href="index.html" class="relative z-[60] flex items-center gap-3 group shrink-0">
-          <div class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20">
-            <i class="fa-solid fa-briefcase text-black text-lg"></i>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
-              Career<span class="text-[#B4D628]">Craft</span>
-            </span>
-            <span class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
-              Premium Coaching
-            </span>
-          </div>
-        </a>
+               <a href="index.html" class="relative z-[60] flex items-center gap-3 group shrink-0">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-[#DFF976] flex items-center justify-center shadow-lg shadow-[#DFF976]/20">
+                        <i class="fa-solid fa-briefcase text-black text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
+                            Career<span class="text-[#B4D628]">Craft</span>
+                        </span>
+                        <span
+                            class="text-[9px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-bold leading-none mt-1">
+                            Resume Writer & Coach
+                        </span>
+                    </div>
+                </a>
 
         <div id="desktopNav" class="hidden xl:flex items-center justify-center gap-2 text-[14px] font-semibold flex-1">
           
